@@ -31,9 +31,12 @@ export default function AuthGuard({ children, requiredRole }: AuthGuardProps) {
   }
 
   // TODO: Check user role if requiredRole is specified
-  if (requiredRole && user && user.role !== requiredRole) {
-    router.push('/unauthorized')
-    return null
+  if (requiredRole) {
+    const userRole = (user as User).role
+    if (userRole !== requiredRole) {
+      router.push('/unauthorized')
+      return null
+    }
   }
 
   return <>{children}</>

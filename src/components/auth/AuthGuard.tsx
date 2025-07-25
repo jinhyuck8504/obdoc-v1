@@ -9,11 +9,17 @@ interface AuthGuardProps {
   requiredRole?: 'doctor' | 'patient' | 'admin'
 }
 
+interface User {
+  id: string
+  role: 'doctor' | 'patient' | 'admin'
+  email?: string
+}
+
 export default function AuthGuard({ children, requiredRole }: AuthGuardProps) {
   const router = useRouter()
   // TODO: Implement auth state management
   const isLoading = false
-  const user = null
+  const user: User | null = null
   
   if (isLoading) {
     return <LoadingSpinner />

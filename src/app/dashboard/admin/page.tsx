@@ -76,10 +76,10 @@ export default function AdminDashboardPage() {
 
       if (doctorsData) {
         const totalDoctors = doctorsData.length
-        const activeDoctors = doctorsData.filter(d => d.subscription_status === 'active').length
-        const pendingDoctors = doctorsData.filter(d => d.subscription_status === 'pending').length
+        const activeDoctors = doctorsData.filter((d: any) => d.subscription_status === 'active').length
+const pendingDoctors = doctorsData.filter((d: any) => d.subscription_status === 'pending').length
         
-        const totalRevenue = subscriptionsData?.reduce((sum, sub) => sum + Number(sub.amount), 0) || 0
+        const totalRevenue = subscriptionsData?.reduce((sum: number, sub: any) => sum + Number(sub.amount), 0) || 0
 
         setStats({
           totalDoctors,

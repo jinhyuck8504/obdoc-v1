@@ -101,7 +101,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="border border-gray-200 rounded-lg p-8 text-center">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">1개월</h3>
-              <div className="text-3xl font-bold text-gray-900 mb-6">
+              <div className="text-3xl font-bold text-gray-900 mb-2">
                 110,000원
                 <span className="text-base font-normal text-gray-500">/월</span>
               </div>
@@ -114,25 +114,65 @@ export default function Home() {
                   추천
                 </span>
               </div>
+              <div className="absolute -top-4 right-4">
+                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  20% 할인
+                </span>
+              </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">6개월</h3>
-              <div className="text-3xl font-bold text-gray-900 mb-6">
+              <div className="text-3xl font-bold text-gray-900 mb-2">
                 528,000원
                 <span className="text-base font-normal text-gray-500">/6개월</span>
+              </div>
+              <div className="text-sm text-gray-500 line-through mb-2">
+                정가: 660,000원
+              </div>
+              <div className="text-sm text-blue-600 font-medium mb-4">
+                월 88,000원 (22,000원 절약)
               </div>
               <p className="text-gray-600 mb-6">가장 인기있는 플랜</p>
             </div>
 
-            <div className="border border-gray-200 rounded-lg p-8 text-center">
+            <div className="border border-gray-200 rounded-lg p-8 text-center relative">
+              <div className="absolute -top-4 right-4">
+                <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  39% 할인
+                </span>
+              </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">12개월</h3>
-              <div className="text-3xl font-bold text-gray-900 mb-6">
+              <div className="text-3xl font-bold text-gray-900 mb-2">
                 799,000원
                 <span className="text-base font-normal text-gray-500">/년</span>
+              </div>
+              <div className="text-sm text-gray-500 line-through mb-2">
+                정가: 1,320,000원
+              </div>
+              <div className="text-sm text-green-600 font-medium mb-4">
+                월 66,583원 (521,000원 절약)
               </div>
               <p className="text-gray-600 mb-6">최대 할인 혜택</p>
             </div>
           </div>
 
-          <div className="text-center mt-12">
+          {/* 가격 안내 문구 */}
+          <div className="mt-8 p-6 bg-gray-50 rounded-lg max-w-4xl mx-auto">
+            <div className="text-center space-y-2">
+              <p className="text-sm text-gray-600">
+                • 모든 가격은 <span className="font-semibold text-gray-800">VAT 포함</span> 가격입니다
+              </p>
+              <p className="text-sm text-gray-600">
+                • <span className="font-semibold text-gray-800">세금계산서 발행</span> 가능합니다
+              </p>
+              <p className="text-sm text-gray-600">
+                • 베타 버전에서는 <span className="font-semibold text-blue-600">무통장 입금</span>만 지원됩니다
+              </p>
+              <p className="text-xs text-gray-500 mt-3">
+                결제 완료 후 관리자 승인을 통해 서비스가 활성화됩니다
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
             <Link
               href="/signup"
               className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"

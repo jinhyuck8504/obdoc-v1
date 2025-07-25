@@ -50,7 +50,7 @@ export default function AdminDashboardPage() {
 
       if (error) throw error
 
-      const formattedData = data?.map(doctor => ({
+      const formattedData = data?.map((doctor: any) => ({
         ...doctor,
         email: doctor.users?.email || 'N/A'
       })) || []
